@@ -1,21 +1,29 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
-% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{textcomp}
 \usepackage{xcolor}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-\begin{document}
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\makeatletter
+\newcommand{\linebreakand}{%
+  \end{@IEEEauthorhalign}
+  \hfill\mbox{}\par
+  \mbox{}\hfill\begin{@IEEEauthorhalign}
+}
+\makeatother
 
 \title{Aabi Zaraat.ai\\
-{\footnotesize \textsuperscript{}}
+{\footnotesize \textsuperscript{}Integrated Aquaculture-Agriculture Soil Enrichment System (IAASES): Bridging Sustainability Through Nutrient-Rich Solutions}
 }
 
-\author{\IEEEauthorblockN{Syed Aun Ali}
+\author{
+\IEEEauthorblockN{Syed Aun Ali}
 \IEEEauthorblockA{\textit{Computer Science (BS-CS)} \\
 \textit{FAST - NUCES}\\
 Karachi, Pakistan \\
@@ -32,12 +40,18 @@ k200422@nu.edu.pk}
 \textit{FAST - NUCES}\\
 Karachi, Pakistan \\
 k200273@nu.edu.pk}
-\and
+\linebreakand % <------------- \and with a line-break
 \IEEEauthorblockN{Dr. M Farukh Shahid (MFS)}
 \IEEEauthorblockA{\textit{Computer Science} \\
 \textit{FAST - NUCES}\\
 Karachi, Pakistan \\
 mfarrukh.shahid@nu.edu.pk}
+\and
+\IEEEauthorblockN{Mr. Sohail Ahmed}
+\IEEEauthorblockA{\textit{Computer Science} \\
+\textit{FAST - NUCES}\\
+Karachi, Pakistan \\
+sohailahmed@nu.edu.pk}
 }
 
 \maketitle
@@ -45,7 +59,7 @@ mfarrukh.shahid@nu.edu.pk}
 \begin{abstract}
 In the domain of research and development, our research introduces a potential innovative solution that is tailored for business-to-business (B2B) users. This research document focuses on the implementation of sustainable organic farming practices in Pakistan through the integration of aquaculture. The aim is to address the challenges faced by the agriculture sector in the country and explore potential solutions for enhancing soil health and optimizing fish farming practices. 
 
-Utilizing cutting-edge technology, we have developed a system that leverages smartphone cameras to accurately identify and classify soil types and fish species that is locally found across Pakistan. In case of soil classification, our mobile app allows users with comprehensive insights into the identified soil’s properties. It provides detailed information on the recommended fish species, accompanied by precise ingredient proportions details. This amalgamation enhances protein levels within the specific soil, resulting in an optimal soil health. In the context of fish classification, our app will offer all the relevant details of the fish that includes fish health, freshness, and the presence of any potential diseases. Moreover, the app also instructs user with precise blending instructions, specifying the optimal combination of fish species, other ingredients, and suitable soil types for achieving the best outcomes. Our methodology employs artificial intelligence, deep learning, and computer vision to facilitate a symbiotic relationship between agriculture and aquaculture, promoting economic growth. 
+Utilizing cutting-edge technology, we have developed a system that leverages smartphone cameras to accurately identify and classify soil types and fish species that is locally found across Pakistan. In case of soil classification, our mobile app allows users with comprehensive insights into the identified soil’s properties. It provides detailed information on the recommended fish species, accompanied by precise ingredient proportions details. This amalgamation enhances protein levels within the specific soil, resulting in an optimal soil health. In the context of fish classification, the same procedure applies (like soil classification). The app also instructs user with precise blending instructions, specifying the optimal combination of fish species, other ingredients, and suitable soil types for achieving the best outcomes. Our methodology employs artificial intelligence, deep learning, and computer vision to facilitate a symbiotic relationship between agriculture and aquaculture, promoting economic growth. 
 
 In the realm of sustainable agriculture, the challenge of enhancing soil fertility while maintaining ecological balance is paramount. Our research addresses this by proposing a method that synergizes soil and fish species classification to create a nutrient-rich fish fertilizer. This practice, rooted in traditional agriculture, is optimized through our system to utilize resources efficiently, leading to improved agricultural outcomes. We have developed an automated system powered by artificial intelligence that simplifies the creation of fish based organic fertilizer, tailored to the specific needs of Pakistani agriculture.
 
@@ -57,6 +71,7 @@ The potential benefits of this research include promoting intelligent and sustai
 \begin{IEEEkeywords}
 Artificial Intelligence, Deep Learning, Computer Vision, Agriculture, Aquaculture, Economical.
 \end{IEEEkeywords}
+\vspace{-0.1 cm} % Adjust the space here
 
 \section{Introduction}
 In recent years, Artificial Intelligence (AI) has improved significantly due to many developments and advancements in the field. Many mobile applications are being built in the domain of AI that are accessible through our trusty smart phones. The usability of AI is further extended by techniques such as Deep learning (DL) and Computer Vision (CV), which happens to be our domain of research-based development. Deep learning and computer vision are two cutting-edge fields of artificial intelligence that have found extensive applications in various real-life scenarios, transforming industries and enhancing our everyday experiences. These technologies have demonstrated remarkable capabilities in recognizing patterns, extracting meaningful information from visual data, and making intelligent decisions based on visual inputs. In this research, our focus will be on the intersection of modern available technological prowess and the vital sectors of agriculture and aquaculture in Pakistan by harnessing the extended techniques AI has to offer. The backbone of Pakistan’s economy is agriculture, and as time progresses, the agricultural system of Pakistan calls for an innovative solution that can bridge the gap between technology and farming. This need forms the backdrop for our research-based development. Picture a mobile application that uses the power of smart phone’s camera to revolutionize two critical aspects of Fish Hydrolysate (one of the techniques used in nutrient extraction from fishes for organic farming, taken as an example in this case) [1]: soil classification and fish assessment. Fish hydrolysate, a nutrient-rich liquid or powder produced from fish waste and byproducts, serves as a valuable organic fertilizer and soil conditioner, enhancing plant growth and soil health. We aim to leverage its potential to improve agricultural activities on poor soil. The end developed product, based on this research, is specifically designed for business-to-business (B2B) users which will be a mobile application, opening up a plethora of possibilities in the agricultural landscape of Pakistan. When the app is being used for soil classification, it becomes a knowledgeable ally for farmers and soil inspectors. Along with identification of soil, the app offers great insight into each soil type’s unique properties. Moreover, the app also offers recommendation of the most compatible fish species for a given soil. The application also provides the user with precise instructions on the incorporation of extracted nutrient from fishes, a strategic move to boost soil protein levels and enhance overall soil health. Moving on to the next use case of our project, which is fish classification [2][3]. The dataset that will be used to train the model for fish classification will be collected locally (commonly found in the fish markets of Karachi), just like the soil dataset. The application will provide extensive information about the fish under scrutiny, including detailed health assessments [4][5], freshness checks, and disease detection [6][7]. The application will also guide the user on the ideal combination of fish species, additional ingredients, and compatible soil types to achieve optimal results. With this technologically innovative research-based development, we aim to practically create a farming companion. The solution, in the form of an application, will simplify the complexities of agriculture while automating the Nutrient Extraction procedure. With just a single tap on the screen, users can access a realm of agricultural insights, making their farming endeavours smarter, more efficient, and undoubtedly more accessible. The core of our research is to promote intelligent and sustainable agricultural practices. With our work, this goal is well within reach. In the Fig 01, we can observe how agriculture and aquaculture are interlinked with each other.
@@ -73,7 +88,7 @@ In recent years, Artificial Intelligence (AI) has improved significantly due to 
 \section{Literature Review}
 In this section, we delve into the existing body of knowledge related to the agricultural challenges faced in Pakistan. Examining the current state of soil degradation, nutrient depletion, and unsustainable farming practices, we highlight the critical issues that necessitate innovative solutions. By providing context and insight into the prevailing problems, this literature review sets the stage for the significance of our research. 
 
-\subsection{Soil Health and Agricultural Practices:} 
+\subsection{\textbf{Soil Health and Agricultural Practices:}} 
 This subsection explores studies and findings related to soil health and conventional agricultural practices in Pakistan. We review research on the impact of chemical fertilizers, traditional farming methods, and their contribution to soil degradation. Understanding the intricacies of soil management practices is crucial for formulating effective strategies, and this review aims to synthesize existing knowledge in this domain.
 The economic significance of land degradation in Pakistan is highlighted in the document, emphasizing the importance of maintaining a growth rate of more than five percent in the agriculture sector for rapid national income growth, macroeconomic stability, employment opportunities, and poverty reduction. The Medium-Term Development Framework (MTDF) 2005-10 emphasizes the crucial role of the agriculture sector in the national economy and envisions an increase in agricultural growth to achieve these economic objectives. The document further discusses how the degradation of natural resources, including land, contributes to the vulnerability of farmers, particularly in dryland areas. It points out that inadequate natural resource management has led to low agricultural productivity, poor living standards, and limited opportunities for economic advancement. Additionally, it emphasizes that sustainable and efficient management of natural resources is essential for improving productivity and reducing poverty in rural areas. The impact of land degradation on agricultural productivity, rural livelihoods, and national economic growth is underscored, signaling the need for effective measures to address this issue. Furthermore, the document highlights the importance of incorporating the perspectives and participation of local farmers and communities in the planning and implementation of policies and interventions to address land degradation. This inclusive approach is seen as essential for creating awareness, promoting sustainable land management practices, and empowering those most affected by land degradation to participate in decision-making processes. [4]
 Based on the given ICARDA Survey [4], the commonly found soil types in Pakistan are: \\
@@ -107,7 +122,7 @@ IIPS has listed several key benefits for Pakistan if sustainable agriculture is 
 5. Enhanced Livelihoods: Sustainable agriculture practices can improve the well-being of rural communities by creating employment opportunities and improving access to nutritious food.\\
 These were the background that necessitate innovative solutions, and we are providing exactly that with our work Aabi Zaraat.ai.
 
-\subsection{Soil Health and Agricultural Practices:} 
+\subsection{\textbf{Soil Health and Agricultural Practices:}}
 This subsection explores studies and findings related to soil health and conventional agricultural practices in Pakistan. We review research on the impact of chemical fertilizers, traditional farming methods, and their contribution to soil degradation. Understanding the intricacies of soil management practices is crucial for formulating effective strategies, and this review aims to synthesize existing knowledge in this domain.
 Soil is an essential component for sustaining life. It provides crucial ecological services. Managing soil health is vital for biodiversity and sustainable agriculture. The physicochemical and biological properties of soil regulate its health. While modern agriculture heavily relies on fertilizers, their use poses threats to the environment. Chemical fertilizers enhance crop productivity and soil fertility but have serious detrimental effects. Continuous usage leads to a decline in soil organic matter, hardening of the soil, pollution, and reduced nutrient content, posing environmental hazards. The exclusive use of chemical fertilizers weakens microbial activity, alters soil pH, increases pests, and contributes to greenhouse gas emissions. This persistent use influences soil biodiversity and overall well-being, highlighting the need for sustainable agricultural practices. [9]
 As per study conducted by Pakissan regarding “Fertilizer And Environmental Pollution In Pakistan”, the potential consequences of over-application of fertilizers in Pakistan include various harmful negative effects. These consequences are: \\
@@ -119,7 +134,7 @@ As per study conducted by Pakissan regarding “Fertilizer And Environmental Pol
 6. Cadmium Accumulation: The use of phosphate fertilizers containing cadmium can result in the accumulation of cadmium in crops. This poses a potential health risk, as high levels of cadmium consumption from contaminated crops can lead to human health problems.\\
 The document suggests the importance of soil testing before the application of fertilizers to determine specific crop nutrient needs, as blanket fertilizer recommendations may not be suitable for all crops or soil types. It emphasizes the need for local research to understand soil and crop conditions, balanced fertilization, and the use of organic alternatives such as animal manure and fish compost. The document also stresses the importance of educating and engaging extension workers to provide farmers with information, demonstrations, and guidance on proper fertilizer use and other agricultural practices. Additionally, it highlights the need for ensuring the availability of appropriate fertilizers based on soil types and crop demands, at the right time. These suggestions are aimed at promoting sustainable and efficient fertilizer use to mitigate the negative environmental and health effects associated with over-application. [10] Aabi Zaraat makes sure the user understands his/her owned soil in more depth and make informed decision about it. With ease of access to knowledge, farmers will be provided with proper guidance on how to make use of local resources for sustainable farming. Our app understands these intricacies of soil management practices and performs the crucial task of formulating effective strategies.
 
-\subsection{Technological Interventions in Agriculture:} 
+\subsection{\textbf{Technological Interventions in Agriculture:}}
 Here, we examine literature on the integration of technology, particularly machine learning, computer vision, and artificial intelligence, in addressing agricultural challenges. By analyzing previous research in similar domains, we build a foundation for the application of modern technologies in soil analysis, nutrient extraction, and sustainable farming practices.
 Some of the applications of deep learning in aquaculture include fish classification, fish counting, fish behavior monitoring, fish fillets defect detection, shrimp disease research, shrimp freshness detection, pearl classification, scallop counting, coral species classification, activity monitoring of cold water coral polyps, jellyfish detection, aquatic macroinvertebrates classification, phytoplankton classification, trend prediction of red tide biomass, dissolved oxygen content prediction, chlorophyll-a content prediction, temperature prediction, marine floating raft aquaculture monitoring, obstacle avoidance in underwater environments, and virtual fish grasp.
 Deep learning is utilized in aquaculture for fish classification and fish behavior monitoring in various ways. For fish classification, convolutional neural networks (CNN) are commonly used to automatically extract features from fish images, enabling accurate classification of different fish species with high accuracy. This is achieved by training the CNN model on large datasets of fish images, allowing it to learn and differentiate between various visual characteristics of different fish species. Additionally, deep learning can also be combined with other technologies such as virtual reality and robotics to further enhance the classification and detection of fish in aquaculture environments. In terms of fish behavior monitoring, recurrent neural networks (RNN) are often employed to analyze video clips capturing different fish behaviors. RNN models are capable of learning and recognizing patterns in temporal data, making them suitable for detecting and classifying different fish behaviors based on video footage. By training RNN models on labeled video clips of normal and unusual fish behaviors, it becomes possible to achieve high accuracy in detecting, localizing, and recognizing specific fish behaviors. Additionally, the use of multimodal deep learning techniques allows for the integration of sensor data (such as motion sensors) with video data to provide a more comprehensive analysis of fish behavior in aquaculture environments. Overall, deep learning techniques, particularly CNN for fish classification and RNN for fish behavior monitoring, have demonstrated promising capabilities in enhancing the efficiency and accuracy of aquaculture operations. [11]
@@ -133,7 +148,7 @@ Our work will be an improvement over this work done by the Pakistani researchers
 AI is increasingly integral to fisheries management and seafood processing, with applications including image recognition, data analysis, and tracking fishing activities. Companies like 'ThisFish' are using AI to automate data collection and improve seafood processing, while Global Fishing Watch and The Nature Conservancy are leveraging AI to monitor fishing activities and prevent over-fishing. Aquaculture companies are also harnessing AI to enhance operations. The use of AI in fisheries management and electronic monitoring has become inevitable, with companies like Thai Union making significant commitments to on-water monitoring. AI is also being used to analyze color and defects in seafood processing, providing valuable insights for quality control measures. Some examples of aquaculture companies using AI to enhance their operations include 'Umitron' and 'Aquaconnect'. Both companies are leveraging the power of artificial intelligence to improve various aspects of their aquaculture operations, such as monitoring, feed management, and environmental control. This use of AI is helping aquaculture companies optimize their processes and ultimately improve the efficiency and sustainability of their operations. [13]
 The people in Pakistan have responded positively to the advancements in fish farming and the expansion of the aquaculture industry. There has been a notable embrace of innovative techniques and technologies to increase productivity, improve product quality, and diversify species of fishes. In addition, the improvement in terms of technology for aquaculture industry has empowered local communities, and enhanced food security. The government has actively promoted the sector through various policies and initiatives, and there is growing recognition of the importance of social and economic aspects in aquaculture development, including the inclusion of local communities as active participants in the industry. These responses indicate a favorable and supportive environment for the growth and sustainability of the aquaculture-agriculture industry in Pakistan. [14]
 
-\subsection{Sustainable Agriculture and Environmental Impact:} 
+\subsection{\textbf{Sustainable Agriculture and Environmental Impact:}}
 Reviewing literature on sustainable agricultural practices and their environmental implications, this subsection provides insights into the global shift towards eco-friendly farming. By understanding the broader context of sustainable agriculture, we position our project within the larger framework of environmentally conscious practices and their potential impact on the agricultural landscape.
 Aquaculture in Pakistan presents a compelling opportunity to revitalize the fisheries sector and contribute to economic development and food security. With a vast coastline and abundant natural water resources, the country has the potential to significantly enhance its aquaculture industry. However, the current aquaculture practices are limited, particularly in the marine and coastal areas, with the majority of production coming from capture fisheries. In order to address the challenges and leverage the opportunities in Pakistan's aquaculture sector, there is a critical need to shift towards sustainable agricultural practices. This shift entails comprehensive research and development approaches that align with the principles of sustainability, environmental conservation, and the well-being of local farmers. The performance of the fisheries sector is not only crucial for economic development but also from the perspective of nutrition security and the overall macroeconomic stability of the country. To ensure the long-term sustainability of aquaculture in Pakistan, it is essential to prioritize the efficient and sustainable management of aquatic resources. This involves promoting environmentally friendly farming practices, optimizing resource utilization, and mitigating the adverse environmental impact of conventional methods. Furthermore, there is a need to support community-based aquaculture projects in a sustainable manner, ensuring that they contribute to both local livelihoods and environmental conservation efforts. The literature focuses on sustainable agriculture and aquaculture in Pakistan and emphasizes on the importance of embracing environmentally conscious practices to address the challenges faced by the fisheries sector. By positioning our project within this larger framework of sustainable agricultural practices, we aim to contribute to the revitalization of aquaculture in Pakistan while mitigating its environmental impact and promoting the well-being of local communities. [15]
 Research by BANGABANDHU SHEIKH MUJIBUR RAHMAN MARITIME UNIVERSITY in this field states the potential role of aquaculture in addressing the imbalance in food production and water use in irrigated farming systems in Punjab, Pakistan. It highlights the need for research to develop distinct and sustainable approaches to integrated animal protein production from aquatic resources. The integration of various fish production approaches into existing land and water use practices is deemed feasible, with a focus on small and medium-scale carp production in ponds using groundwater. Integrated aquaculture is seen as a way to address food security needs and could contribute to various components of water distribution and irrigated farming systems in the region. The document emphasizes the importance of promoting recycling of agricultural residues, reducing pesticide use, and making better use of scarce water resources through integrated aquaculture production. [16]
@@ -141,7 +156,7 @@ The document “Fish and fish waste-based fertilizers in organic farming” disc
 Another fertilization of soil technique that we can use in our project is 'AnchoisFert', a fertilizer derived from milled anchovy leftovers. The experiment involved using pots with specific soil conditions and amendments, and the effects of the fertilizers on the soil properties were evaluated. The analysis included measurements of conductivity, pH, organic carbon, total nitrogen, microbial biomass, enzyme activities, and water-soluble phenols. The authors also conducted radical-scavenging activity and oxygen radical absorbance capacity assays to assess the antioxidant properties of the soil extracts. The statistical analysis showed significant differences in the effects of the fertilizers on the measured parameters [18]. Regarding its feasibility in Pakistan, the production of fertilizers from fish waste could have significant potential, given the country's significant fish processing industry and associated waste. The use of a mobile application to provide farmers with step-by-step guidance on the production and application of these fish waste-derived fertilizers could further enhance its feasibility and scope in Pakistan. Our mobile application could offer information on the extraction process, guidelines on producing the fertilizer, and instructions on its optimal application for different crops and soil conditions, thereby aiding in the widespread adoption of this Eco-friendly and sustainable fertilizer solution.
 There is a literature that explores the valorization of fish waste compost as a fertilizer for agricultural use. It discusses the handling of waste and its management, focusing on the composting of food waste and the potential for producing environmentally safe materials from bio-waste. It emphasizes the suitability of fish waste for composting due to its high nutrient content and mentions the commercial availability of fish-meal-based fertilizers authorized for use in organic agriculture. The literature highlights the growing research interest in sustainable management of food waste and the various techniques for processing waste into value-added products such as compost, bio-gas, animal feed, and chemicals. It is highly feasible for Pakistan environment [19].
 
-\subsection{Knowledge Deficit in Agriculture:} 
+\subsection{\textbf{Knowledge Deficit in Agriculture:}} 
 This section focuses on literature that highlights the knowledge deficit among farmers and the impact it has on decision-making. Understanding the gaps in awareness and education is crucial for the successful implementation of our project. We explore studies that discuss the challenges of disseminating agricultural knowledge and propose methods to bridge this gap.
 The lack of awareness and training among farmers on sustainable pesticide usage and waste management is a significant concern. Many farmers are not aware of alternative pest control methods and rely solely on chemical pesticides as they believe it to be the only solution to control insects and pests. The study suggests that limited knowledge on alternative pest management approaches leads to the extensive use of pesticides, contributing to negative effects on human health and the environment. The findings also highlight that a large number of farmers become intoxicated each year due to the improper use of pesticides in cotton-growing areas of Pakistan. This is often attributed to low levels of knowledge about the harmful effects of pesticide exposure, leading to farmers and farm-workers rarely adopting precautionary measures while applying pesticides. In addressing these issues, the study underscores the importance of developing extension, educational, and capacity building programs for farmers on reducing the use of pesticides. These programs are vital for raising awareness about alternative pest control methods and changing farmers' behavior towards chemicals. It is suggested that through meaningful training programs, farmers can be empowered to adopt sustainable and environmentally sound production practices, which can lead to reduced reliance on chemical pesticides. Overall, the study highlights the need for comprehensive and well-planned programs to promote the benefits of alternative pest control methods, reduce the extensive use of pesticides, and improve the sustainable usage of pesticides to protect crops, human health, and the environment [20][21]. Aabi Zaraat ensures that people/farmers of Pakistan have access to such knowledge, so that they can implement modern day techniques and alternative sustainable solution on their farms that is organic farming. 
 A study conducted in 2017 examined farmers' perceptions about climate change and environmental issues in Pakistan by utilizing indigenous knowledge. The findings revealed climate change as the most significant environmental problem, with farmers relying on scientists and the media for climate information. Farmers expressed the highest responsibility for addressing climate change but lacked trust in government and industry. The study highlighted constraints to adaptation, such as lack of funds, high cost of inputs, and limited knowledge. The integration of indigenous knowledge and locally relevant adaptation strategies is proposed to address these challenges and effectively inform policy-making [22].
@@ -165,13 +180,13 @@ Figure 02 visualizes the fundamental workflow, illustrating how different compon
 \end{figure}
 
 We will be using deep learning for classification. Our methodology involves the experimental setup, deep learning model, and evaluation criteria for system performance.\\
-\subsection{Data Collection:}
+\subsection{\textbf{Data Collection:}}
 Various sites in Karachi were visited to collect an image dataset for fish and soil classification. The data collection adhered to standardized methods and protocols for accuracy and consistency.\\
-\subsection{Feature Extraction:}
+\subsection{\textbf{Feature Extraction:}}
 After data collection, the focus shifts to feature extraction, allowing effective classification. Features related to soil composition, texture, and nutrient content are extracted for soil classification. In fish classification, features such as morphology, coloration, and scale patterns are extracted. Collected data undergoes preprocessing to enhance its suitability for deep learning algorithms. Figure 3 provides a visual representation of the backend for fish and soil classification.\\
-\subsection{Deep Learning Model:}
+\subsection{\textbf{Deep Learning Model:}}
 Different models are integrated for each respective stage to determine their effectiveness. The shortlisted algorithms include ResNet V0, EfficientNet and its variants. Model configuration is based on their performance during the respective stage, avoiding immediate determinations before testing.\\
-\subsection{Evaluation:}
+\subsection{\textbf{Evaluation:}}
 Test data with abnormalities is applied to the trained model, and performance is assessed by plotting confusion matrices and other accuracy detection forms. Abnormality graphs are plotted to identify anomalies in the classification.\\
 
 This integrated methodology ensures a systematic and comprehensive approach to the classification problem, aligning with the research objectives and contributing to the overall success of this research.
@@ -187,7 +202,7 @@ The main objective of this research project is to build, automate, and ease the 
         \item Gather extensive datasets of soil samples and fish species from the local Karachi market.
         \item These datasets will serve as the foundation for training and testing the deep learning algorithms used in the classification processes.
     \end{itemize}
-    
+    \vspace{12pt} % Add a blank line with a vertical space of 12 points
     \item \textbf{Soil Classification:}
     \begin{itemize}
         \item Develop a robust soil classification system that utilizes the mobile app’s camera.
@@ -242,7 +257,7 @@ The main objective of this research project is to build, automate, and ease the 
 \begin{table}[htbp]
 \centering
 \caption{Objectives and Their Approach Mapping}
-\begin{tabular}{|c|p{0.8\linewidth}|}
+\begin{tabular}{|c|p{0.75\linewidth}|}
 \hline
 \textbf{Objective} & \textbf{Approach for Achieving the Objective} \\
 \hline
@@ -324,44 +339,6 @@ Throughout this research, comprehensive documentation is maintained, encompassin
 
 \section{Results and Findings}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\linewidth]{Capture5.PNG}
-    \caption{Training Validation Accuracy Per Epoch-EfficientNetB0}
-    \label{fig:accuracy}
-\end{figure}
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\linewidth]{__results___39_0.png}
-    \caption{Training Validation Accuracy Per Epoch-ResNetV0}
-    \label{fig:accuracy}
-\end{figure}
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\linewidth]{__results___30_0.png}
-    \caption{Training Validation Accuracy Per Epoch-Base CNN}
-    \label{fig:accuracy}
-\end{figure}
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\linewidth]{GoogleNet.png}
-    \caption{Training Validation Accuracy Per Epoch-GoogleNet}
-    \label{fig:accuracy}
-\end{figure}
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\linewidth]{AlexNet.png}
-    \caption{Training Validation Accuracy Per Epoch-AlexNet}
-    \label{fig:accuracy}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.8\linewidth]{Capture6.PNG} % Replace with your actual image file
-    \caption{Confusion Matrix}
-    \label{fig:confusion}
-\end{figure}
-
 \subsection{Training and Validation Accuracy:}
 
 Training and validation accuracy with respect to epochs for the current fish species on the proposed model is plotted in Fig. 4-8. Results of applying the model on the dataset and plotting a traditional confusion matrix of the predictions (Fig. 9).
@@ -369,6 +346,45 @@ Training and validation accuracy with respect to epochs for the current fish spe
 \subsection{Confusion Matrix:}
 
 The confusion matrix is a visual snapshot of our classification model's prowess. In this scenario, it illustrates the accuracy of fish species classification. Each diagonal cell is boldly saturated, showcasing the model's adeptness in correctly identifying fish species. Minimal shading in the off-diagonal cells indicates low occurrences of misclassifications—False Positives and False Negatives.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Capture5.PNG}
+    \caption{Training Validation Accuracy Per Epoch-EfficientNetB0}
+    \label{fig:accuracy}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{__results___39_0.png}
+    \caption{Training Validation Accuracy Per Epoch-ResNetV0}
+    \label{fig:accuracy}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{__results___30_0.png}
+    \caption{Training Validation Accuracy Per Epoch-Base CNN}
+    \label{fig:accuracy}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{GoogleNet.png}
+    \caption{Training Validation Accuracy Per Epoch-GoogleNet}
+    \label{fig:accuracy}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{AlexNet.png}
+    \caption{Training Validation Accuracy Per Epoch-AlexNet}
+    \label{fig:accuracy}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Capture6.PNG} % Replace with your actual image file
+    \caption{Confusion Matrix}
+    \label{fig:confusion}
+\end{figure}
 
 
 \section{Project Outcomes and Deliverables}
@@ -388,7 +404,7 @@ In conclusion, we aim to leverage cutting-edge technology that follows industry-
         \begin{itemize}
             \item Enhanced fish classification ensures consumers can confidently identify halal and haram fish, promoting food safety.
         \end{itemize}
-    
+    \vspace{12pt} % Add a blank line with a vertical space of 12 points
     \item \textbf{Sustainable Agriculture Practices:}
         \begin{itemize}
             \item Recommendations for soil-fish compatibility contribute to sustainable farming practices, optimizing resource utilization.

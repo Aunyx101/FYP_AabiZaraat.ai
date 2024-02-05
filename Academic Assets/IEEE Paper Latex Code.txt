@@ -417,6 +417,20 @@ The confusion matrix is a visual snapshot of our classification model's prowess.
     \label{fig:confusion}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth, height=6.5cm]{VGG19ACC.png}
+    \includegraphics[width=1\linewidth, height=6.5cm]{VGG19LOSS.png}
+    \caption{Training Validation Accuracy Per Epoch-VGG19}
+    \label{fig:accuracy}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth, height=8cm]{VGG19CONF.png} 
+    \caption{Confusion Matrix - VGG19}
+    \label{fig:confusion}
+\end{figure}
+
 
 \section{Conclusion}
 In conclusion, our research has demonstrated the significant potential of AI and computer vision in revolutionizing aquaculture and agriculture in Pakistan. The developed mobile application, designed to classify soil types and fish species, could significantly enhance farming practices and automate the fish nutrient extraction and application procedure. This innovative approach can bridge the gap between technology and farming, vital for improving the backbone of Pakistan's economy - agriculture. This application is promising for business-to-business users, offering a comprehensive resource for efficient, intelligent, and sustainable farming practices. Moreover, the application's scope, covering soil classification and fish assessment, can greatly optimize agricultural endeavours through its insightful recommendations and health assessments. Within merely a single tap, users can unlock a realm of agricultural insights, paving the path towards smarter, more accessible, and undoubtedly more efficient farming.

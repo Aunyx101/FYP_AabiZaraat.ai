@@ -1,0 +1,97 @@
+#halal old
+class_names = [
+ 'Big Raho Fish',
+ 'Black Water Rahu',
+ 'Cat Fish',
+ 'Dhari Fish',
+ 'Dilwar Fish',
+ 'Heera Fish',
+ 'Jalabi Paplet Fish',
+ 'Moi Fish',
+ 'Naiser Fish',
+ 'Paplet Fish',
+ 'Parrot Fish',
+ 'Rahu Fish',
+ 'Red Snapper Fish',
+ 'Ringi Cat Fish',
+ 'Safi Fish',
+ 'Sarum Fish',
+ 'Silver Carp Fish',
+ 'Tacan Fish',
+ 'Zandia or Dhandia Fish'
+]
+
+#halal_new_respective
+class_names = [
+ 'Rahu',
+ 'Rohu',
+ 'Cat fish',
+ 'Dhai',
+ 'Salmon',
+ 'Red snapper',
+ 'White pomfret',
+ 'Moi',
+ 'Naiser',
+ 'Paplet',
+ 'Parrotfish',
+ 'Queenfish',
+ 'Red bream',
+ 'Leatherjacket',
+ 'Greater amberjack',
+ 'Indo-pacific king mackerel',
+ 'Tilapia',
+ 'Sweetlips',
+ 'Rubberlip grunt'
+]
+
+----------------------------------------------------------------------------------------------------
+
+#haram
+class_names = [
+ 'Angel Fish',
+ 'Black Ghost Knife Fish',
+ 'Blue Line Shark',
+ 'Carp',
+ 'Catfish',
+ 'Clownfish (Nemo)',
+ 'Demasoni Cichlid',
+ 'Diamond Carp',
+ 'Green Severum',
+ 'King Firefish',
+ 'Kite Fish',
+ 'KoiQue',
+ 'Mono Angel',
+ 'Oscar Fish',
+ 'Pirate Chiplet',
+ 'Red Jewel',
+ 'Red Tetratick',
+ 'ShrimpChiplet',
+ 'Skate Fish',
+ 'Tekra Family',
+ 'TictletChiplet (color variants)'
+]
+
+#haram_new_respective
+class_names = [
+ 'Angel fish',
+ 'Black ghost',
+ 'Striped catfish',
+ 'Carp',
+ 'Catfish',
+ 'Clownfish',
+ 'Demasons cichlide',
+ 'Koi carp',
+ 'Krobié',
+ 'Firefish',
+ 'Kitefish',
+ 'Koi',
+ 'African moony',
+ 'Oscar',
+ 'Goldfish',
+ 'Jewel cichlid',
+ 'Saddled seabream',
+ 'Barb',
+ 'Spotted scat',
+ 'Banded cichlid',
+ 'Comet'
+]

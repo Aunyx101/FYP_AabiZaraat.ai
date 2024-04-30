@@ -13,7 +13,7 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 url = "https://www.fishbase.se/search.php"
 driver.get(url)
 
-fish_name = "Cichlid"  
+fish_name = "cichlid"  
 search_input = driver.find_element("name", "CommonName")
 search_input.send_keys(fish_name)
 search_button = driver.find_element("xpath", "//input[@value='Search']")
